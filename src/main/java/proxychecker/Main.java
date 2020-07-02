@@ -1,6 +1,7 @@
 package proxychecker;
 
 import proxychecker.parsers.FileParser;
+import proxychecker.parsers.MyParser;
 import proxychecker.parsers.SiteParser;
 
 import java.io.*;
@@ -18,16 +19,17 @@ public class Main {
     );
 
     public static void main(String[] args) throws IOException, InterruptedException {
-        for (String logoItem : LOGO) {
-            System.out.println(logoItem);
-            Thread.sleep(500);
-        }
+//        for (String logoItem : LOGO) {
+//            System.out.println(logoItem);
+//            Thread.sleep(500);
+//        }
 
-        FileParser parser = new FileParser("proxy.txt");
-        parser.parse();
+        MyParser fileParser = new FileParser("proxy.txt");
+//        fileParser.parse();
 
-        SiteParser siteParser = new SiteParser();
+        MyParser siteParser = new SiteParser();
         siteParser.parse();
+
 
     }
 
